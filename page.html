@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Winterspel</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<!-- Score lijst -->
+    <div class="outerdiv">
+    <div class="leftdiv">
+        <div id="viewuitleg" onclick="stop()">Bekijk uitleg</div>
+        <h3>TopScores</h3>
+        <table>
+        <thead><td>Speler:</td><td>Goed:</td><td>Fout:</td></thead>
+        <tbody id="scores">
+            
+        </tbody>
+        </table>
+    </div>
+    	<!-- Header met titel en selectbox -->
+        <header>
+            <h1 class="title">Winterspel</h1>
+            <div class="werpen">Aantal stenen:
+                <select id="select">
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                </select>
+                <div class="werp" onclick="gooi()">Werp!</div>
+            </div>
+        </header>
+        <div class="midcontent">
+            <div id="dobbelstenen">
+            	<!-- Uitleg -->
+                <div id="uitleg">
+                    <p><b>Welkom bij het winterspel</b></p>
+
+                    Hierbij hebt u de keuze om 3, 4, 5 of 6 dobbelstenen te werpen.<br />
+                    Als volgt moet u invullen hoeveel <i>wakken</i>, <i>ijsberen</i> en <i>pinguins</i> u ziet.<br />
+
+                    <p>
+                    <b>Hoe werkt het?</b><br />
+                    -Een <i>wak</i> is het middelste oog van een dobbelsteen. 
+                    </p>
+                    <p>
+                    -De <i>ijsberen</i> zijn de ogen om een wak heen. Alleen om een wak zitten ijsberen!<br />
+                    Zit er GEEN wak op de dobbelsteen, dan is er ook geen ijsbeer.
+                    </p>
+                    <p>
+                    -De <i>pinguins</i> zijn de ogen aan de achterkant van de dobbelsteen.<br />
+                    <small><i>De voorkant en de achterkant van de dobbelsteen zijn altijd samen 7 ogen.</i></small>
+                    </p>
+                    <b>Veel succes!</b>
+                </div>
+                <canvas id="dbs" width="800px" height="100px">
+    Your browser does not support the HTML5 canvas tag.</canvas>
+                </div>
+            <!-- Antwoord velden -->
+            <div id="antwoorden">
+                <div id="wakkendiv"><label for="wakken">Wakken: </label><input type="text" id="wakken" name="wakken">
+                <div id="check1"></div>
+                </div>
+                <div id="ijsberendiv"><label for="ijsberen">IJsberen: </label><input type="text" id="ijsberen" name="ijsberen">
+                <div id="check2"></div>
+                </div>
+                <div id="pinguinsdiv"><label for="Pinguins">Pinguins: </label><input type="text" id="pinguins" name="pinguins">
+                <div id="check3"></div>
+                </div>
+            </div>
+            <div id="antwoord"></div>
+            <div id="checkAntwoord" onclick="checkAnswer()">Check mijn antwoord!</div>
+        </div>
+    </div>
+    <!-- Javascript -->
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
